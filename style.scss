@@ -26,24 +26,36 @@ header {
     background-color: white;
     grid-column: 2 / 3;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    input {
+        height: 20px;
+        width: 500px;
+    }
     .right.header {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 11rem);
+        justify-items: end;
+        justify-self: end;
     }
     .greeting {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 3.5rem;
+        align-items: center;
+        
         img {
             grid-column: 1 / 2;
+            
         }
         p {
             grid-column: 2 / 3;
         }
     }
     ul {
+        list-style: none;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        justify-items: end;
     }
 }
 
@@ -55,6 +67,7 @@ aside {
     display: grid;
     align-items: center;
     justify-items: center;
+    
 }
 
 main {
