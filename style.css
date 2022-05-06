@@ -22,8 +22,8 @@ body {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 4fr;
-      grid-template-columns: 1fr 4fr;
+  -ms-grid-columns: minmax(225px, 250px) 4fr;
+      grid-template-columns: minmax(225px, 250px) 4fr;
   -ms-grid-rows: minmax(100px, 120px);
       grid-template-rows: minmax(100px, 120px);
 }
@@ -43,6 +43,8 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
 }
 
 header .left.header {
@@ -210,7 +212,6 @@ aside {
 }
 
 aside .sidebar {
-  padding-top: 2rem;
   height: 100%;
   background-color: var(--primary-color);
   color: white;
@@ -278,33 +279,32 @@ main {
   grid-column: 2 / 3;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
+  -ms-grid-columns: 2fr minmax(50px, 300px);
+      grid-template-columns: 2fr minmax(50px, 300px);
   gap: 15px;
-  padding-top: 1rem;
   padding-left: 1rem;
   height: 100%;
 }
 
-main article {
+main > article {
+  padding-top: 2rem;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / 3;
 }
 
-main article .cardContainer {
-  margin-top: .3rem;
+main > article .cardContainer {
+  margin-top: 1rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(150px, 1fr))[2];
       grid-template-columns: repeat(2, minmax(150px, 1fr));
+  -ms-grid-rows: (minmax(150px, 1fr))[autofit];
+      grid-template-rows: repeat(autofit, minmax(150px, 1fr));
   gap: 10px;
 }
 
-main article .cardContainer .card {
+main > article .cardContainer .card {
   background-color: white;
   -webkit-box-shadow: var(--box-shadow-1);
           box-shadow: var(--box-shadow-1);
@@ -316,20 +316,29 @@ main article .cardContainer .card {
   display: grid;
 }
 
-main article .cardContainer .card .title {
+main > article .cardContainer .card .title {
   font-size: 1rem;
   font-weight: bold;
 }
 
-main article .cardContainer .card p {
-  font-size: .7rem;
+main > article .cardContainer .card p {
+  font-size: 1.1rem;
   padding-right: 2rem;
 }
 
-main article .cardContainer .card .icon {
+main > article .cardContainer .card .icon {
   -ms-grid-column-align: end;
       justify-self: end;
   margin-top: 1rem;
+}
+
+main > article .cardContainer .card .icon span {
+  font-size: 1.7rem;
+}
+
+main .main.right {
+  padding-top: 2rem;
+  padding-right: 3rem;
 }
 
 main .announcement {
@@ -342,9 +351,34 @@ main .announcement {
 }
 
 main .announcement .announcementContainer {
+  display: -ms-grid;
+  display: grid;
+  background-color: white;
   -webkit-box-shadow: var(--box-shadow-1);
           box-shadow: var(--box-shadow-1);
   border-radius: 3px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+main .announcement .announcementContainer .card {
+  padding: .5rem;
+  width: 20rem;
+}
+
+main .announcement .announcementContainer .card .title {
+  font-weight: bold;
+}
+
+main .announcement .announcementContainer .card.middle {
+  border-top: 1px solid #c9c3c3;
+  border-bottom: 1px solid #c9c3c3;
 }
 
 main .trending {
@@ -356,9 +390,26 @@ main .trending {
   grid-row: 2/ 3;
 }
 
-main .trending article {
-  border-radius: 3px;
+main .trending .trendingContainer {
+  border-radius: 10px;
   -webkit-box-shadow: var(--box-shadow-1);
           box-shadow: var(--box-shadow-1);
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 2rem 0;
+  margin-top: 1rem;
+}
+
+main .trending .trendingContainer .card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: .5fr 1fr;
+      grid-template-columns: .5fr 1fr;
+  justify-items: center;
+  font-size: 1.4rem;
 }
 /*# sourceMappingURL=style.css.map */
