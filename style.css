@@ -35,14 +35,10 @@ header {
   grid-column: 2 / 3;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(450px, 500px))[2];
-      grid-template-columns: repeat(2, minmax(450px, 500px));
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-grid-columns: (minmax(385px, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(385px, 1fr));
+  padding: 1rem 4rem;
+  position: relative;
   -webkit-box-shadow: var(--box-shadow-1);
           box-shadow: var(--box-shadow-1);
 }
@@ -291,17 +287,21 @@ main > article {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2rem;
+      grid-template-rows: 2rem;
 }
 
 main > article .cardContainer {
-  margin-top: 1rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(150px, 1fr))[2];
       grid-template-columns: repeat(2, minmax(150px, 1fr));
-  -ms-grid-rows: (minmax(150px, 1fr))[autofit];
-      grid-template-rows: repeat(autofit, minmax(150px, 1fr));
+  -ms-grid-rows: (1fr)[autofit];
+      grid-template-rows: repeat(autofit, 1fr);
   gap: 10px;
+  padding-bottom: 3rem;
 }
 
 main > article .cardContainer .card {
@@ -311,7 +311,6 @@ main > article .cardContainer .card {
   padding: 1rem;
   border-left: 6px solid gold;
   border-radius: 3px;
-  height: 95px;
   display: -ms-grid;
   display: grid;
 }
@@ -339,15 +338,10 @@ main > article .cardContainer .card .icon span {
 main .main.right {
   padding-top: 2rem;
   padding-right: 3rem;
-}
-
-main .announcement {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
 }
 
 main .announcement .announcementContainer {
@@ -382,12 +376,11 @@ main .announcement .announcementContainer .card.middle {
 }
 
 main .trending {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/ 3;
+  padding-bottom: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2rem;
+      grid-template-rows: 2rem;
 }
 
 main .trending .trendingContainer {
@@ -400,7 +393,7 @@ main .trending .trendingContainer {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  padding: 2rem 0;
+  padding-top: 2rem;
   margin-top: 1rem;
 }
 
@@ -410,6 +403,6 @@ main .trending .trendingContainer .card {
   -ms-grid-columns: .5fr 1fr;
       grid-template-columns: .5fr 1fr;
   justify-items: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 /*# sourceMappingURL=style.css.map */
