@@ -1,2 +1,2 @@
 # adminDashboard
-[Live] (https://davidsan13.github.io/adminDashboard/)
+[Live](https://davidsan13.github.io/adminDashboard/)
